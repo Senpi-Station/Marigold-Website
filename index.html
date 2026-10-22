@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marigold Coffee Roasters</title>
+  <meta name="description" content="Small-batch coffee, roasted weekly." />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <a class="logo" href="#top"><span class="sun"></span>marigold</a>
+    <nav id="menu" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#brew">Brew</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="actions">
+      <button id="theme-toggle" class="icon-btn"
+              aria-label="Toggle espresso mode">
+        <span class="moon"></span>
+      </button>
+      <button class="bag" aria-label="Your bag">
+        Bag <b id="bag-count">0</b>
+      </button>
+      <button id="burger" class="icon-btn burger"
+              aria-label="Menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Small-batch roasters</p>
+        <h1 class="reveal">Coffee worth <em>waking up</em> for.</h1>
+        <p class="lead reveal">
+          We roast four single-origin beans every week and ship them fresh.
+        </p>
+        <div class="cta reveal">
+          <a class="btn btn-primary" href="#shop">Shop the roast</a>
+          <a class="btn btn-ghost" href="#brew">Brew calculator</a>
+        </div>
+        <ul class="stats reveal">
+          <li><b data-count="12000">12,000</b><span>bags shipped</span></li>
+          <li><b data-count="4">4</b><span>origins</span></li>
+          <li><b data-count="48">48</b><span>hours to ship</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="arch"></div>
+        <div class="disc"></div>
+        <div class="bean b1"></div>
+        <div class="bean b2"></div>
+        <div class="bean b3"></div>
+        <svg class="badge" viewBox="0 0 200 200" width="120" height="120">
+          <path id="ring"
+                d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0" />
+          <text>
+            <textPath href="#ring">
+              small batch • roasted weekly •
+            </textPath>
+          </text>
+          <circle class="dot" cx="100" cy="100" r="26" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Single origin</span><span>Small batch</span>
+        <span>Roasted weekly</span><span>Fairly traded</span>
+        <span>Single origin</span><span>Small batch</span>
+        <span>Roasted weekly</span><span>Fairly traded</span>
+      </div>
+    </div>
+
+    <!-- Shop -->
+    <section class="section" id="shop">
+      <div class="section-head reveal">
+        <p class="eyebrow">The roast list</p>
+        <h2>Pick your <em>perfect</em> cup</h2>
+      </div>
+      <div class="chips" role="group" aria-label="Filter by roast">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="light">Light</button>
+        <button class="chip" data-filter="medium">Medium</button>
+        <button class="chip" data-filter="dark">Dark</button>
+      </div>
+      <div class="grid">
+        <article class="product reveal" data-roast="light">
+          <div class="tile tile-gold">
+            <span>Light</span><span>Ethiopia</span>
+          </div>
+          <div class="info">
+            <h3>Sunday Morning</h3>
+            <p>Jasmine, peach and honey.</p>
+            <div class="buy">
+              <b>$16</b><button class="add">Add to bag</button>
+            </div>
+          </div>
+        </article>
+        <article class="product reveal" data-roast="light">
+          <div class="tile tile-sky">
+            <span>Light</span><span>Kenya</span>
+          </div>
+          <div class="info">
+            <h3>Blue Hour</h3>
+            <p>Blackcurrant and brown sugar.</p>
+            <div class="buy">
+              <b>$18</b><button class="add">Add to bag</button>
+            </div>
+          </div>
+        </article>
+        <article class="product reveal" data-roast="medium">
+          <div class="tile tile-tomato">
+            <span>Medium</span><span>Colombia</span>
+          </div>
+          <div class="info">
+            <h3>Slow Burn</h3>
+            <p>Caramel, red apple and cocoa.</p>
+            <div class="buy">
+              <b>$15</b><button class="add">Add to bag</button>
+            </div>
+          </div>
+        </article>
+        <article class="product reveal" data-roast="medium">
+          <div class="tile tile-forest">
+            <span>Medium</span><span>Guatemala</span>
+          </div>
+          <div class="info">
+            <h3>Hearth</h3>
+            <p>Toasted almond and orange.</p>
+            <div class="buy">
+              <b>$15</b><button class="add">Add to bag</button>
+            </div>
+          </div>
+        </article>
+        <article class="product reveal" data-roast="dark">
+          <div class="tile tile-ink">
+            <span>Dark</span><span>Sumatra</span>
+          </div>
+          <div class="info">
+            <h3>Midnight Train</h3>
+            <p>Dark chocolate and cedar.</p>
+            <div class="buy">
+              <b>$17</b><button class="add">Add to bag</button>
+            </div>
+          </div>
+        </article>
+        <article class="product reveal" data-roast="dark">
+          <div class="tile tile-plum">
+            <span>Dark</span><span>Brazil</span>
+          </div>
+          <div class="info">
+            <h3>Night Owl</h3>
+            <p>Roasted hazelnut and spice.</p>
+            <div class="buy">
+              <b>$14</b><button class="add">Add to bag</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Brew -->
+    <section class="section" id="brew">
+      <div class="brew-card">
+        <div class="brew-copy reveal">
+          <p class="eyebrow">Brew calculator</p>
+          <h2>Never guess your <em>ratio</em> again</h2>
+          <p>Slide to pick how many cups you are making.</p>
+        </div>
+        <form class="calc reveal" id="calc">
+          <label>Cups <output id="cups-out">2</output>
+            <input type="range" id="cups" min="1" max="8" value="2" />
+          </label>
+          <label>Strength
+            <select id="strength">
+              <option value="17">Mellow (1:17)</option>
+              <option value="16" selected>Balanced (1:16)</option>
+              <option value="15">Bold (1:15)</option>
+            </select>
+          </label>
+          <div class="result">
+            <div><b id="grams">30</b><span>g coffee</span></div>
+            <div><b id="water">480</b><span>ml water</span></div>
+          </div>
+          <div class="meter"><i id="meter"></i></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>From <em>farm</em> to your cup</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal">
+          <h3>We roast on Monday</h3>
+          <p>Every bag is roasted in a small batch, never in advance.</p>
+        </li>
+        <li class="reveal">
+          <h3>We ship in 48 hours</h3>
+          <p>Fresh beans leave our door two days after the roast.</p>
+        </li>
+        <li class="reveal">
+          <h3>You brew and enjoy</h3>
+          <p>Use the calculator above and taste the difference.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head reveal">
+        <p class="eyebrow">Good questions</p>
+        <h2>Quick <em>answers</em></h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>How fresh is the coffee?</summary>
+          <p>Roasted on Monday and shipped within two days.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you sell ground coffee?</summary>
+          <p>Whole bean only, because it stays fresh much longer.</p>
+        </details>
+        <details class="reveal">
+          <summary>Can I pause my order?</summary>
+          <p>Yes. Skip or cancel any time from your account.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section" id="join">
+      <form class="join reveal" id="join-form" novalidate>
+        <h2>Get the <em>first pour</em></h2>
+        <p>One email a month. New roasts and brew tips, nothing else.</p>
+        <div class="join-row">
+          <label>
+            <span class="sr">Email</span>
+            <input type="email" name="email"
+                   placeholder="you@example.com" />
+          </label>
+          <button class="btn btn-dark" type="submit">Subscribe</button>
+        </div>
+        <p class="error" id="join-msg" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Marigold Coffee</span>
+    <span>A demo site, built with HTML, CSS and JS</span>
+  </footer>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
